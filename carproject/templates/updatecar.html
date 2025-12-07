@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Update Car{% endblock %}
+
+{% block content %}
+  <h1 class="h3 mb-3">Update Car</h1>
+  <form method="post" class="row g-3">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Update</button>
+      <a class="btn btn-secondary" href="{% url 'cars' %}">Cancel</a>
+    </div>
+  </form>
+{% endblock %}

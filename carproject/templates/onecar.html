@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ car.make }} {{ car.model }}{% endblock %}
+
+{% block content %}
+  <h1 class="h4">{{ car.year }} {{ car.make }} {{ car.model }}</h1>
+  <ul class="list-group mb-3">
+    <li class="list-group-item"><strong>VIN:</strong> {{ car.vin }}</li>
+    <li class="list-group-item"><strong>Color:</strong> {{ car.color }}</li>
+    <li class="list-group-item"><strong>Year:</strong> {{ car.year }}</li>
+  </ul>
+  <a class="btn btn-secondary" href="{% url 'cars' %}">Back</a>
+  <a class="btn btn-primary" href="/update/{{ car.vin }}/">Edit</a>
+  <a class="btn btn-danger" href="/delete/{{ car.vin }}/">Delete</a>
+{% endblock %}
